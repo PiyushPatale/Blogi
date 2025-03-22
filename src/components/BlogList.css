@@ -1,0 +1,7 @@
+.blog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 900px;
+  margin: auto;
+}

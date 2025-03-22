@@ -1,0 +1,32 @@
+.like-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #f9f9f9;
+  color: black;
+  border: none;
+  padding: 4px 6px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.like-button.liked {
+  background: #ffcccb;
+  color: red;
+}
+
+.heart-icon {
+  font-size: 1.5rem;
+  color: black;
+  transition: color 0.3s ease-in-out;
+}
+
+.like-button.liked .heart-icon {
+  color: red;
+}
+
+.like-count {
+  font-weight: bold;
+}
