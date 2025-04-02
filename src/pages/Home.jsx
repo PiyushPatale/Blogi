@@ -25,8 +25,11 @@ const Home = () => {
       );
       console.log(res.data.blogs);
       setBlogs((prevBlogs) => [...prevBlogs, ...res.data.blogs]);
-      if (res.data.blogs.length < pageLimit) setHasMore(false);
-      setPage(page + 1);
+      if (res.data.blogs.length < pageLimit) {
+        setHasMore(false);
+      } else {
+        setPage((prevPage) => prevPage + 1);
+      }
     } catch (error) {
       console.error("Error fetching blogs:", error);
     }
@@ -44,14 +47,16 @@ const Home = () => {
         Discover amazing stories, insights, and ideas from writers around the
         world.
       </p>
-      <InfiniteScroll
-        dataLength={blogs.length}
-        next={fetchBlogs}
-        hasMore={hasMore}
-        loader={<h4>Loading...</h4>}
-      >
-        <BlogList blogs={blogs} />
-      </InfiniteScroll>
+        <InfiniteScroll
+          dataLength={blogs.length}
+          next={fetchBlogs}
+          hasMore={hasMore}
+          loader={<h4>Loading...</h4>}
+          scrollableTarget={null} 
+          style={{ width: "100%", overflow: "visible" }}
+        >
+          <BlogList blogs={blogs} />
+        </InfiniteScroll>
       <button className="floating-home-button" onClick={() => navigate("/")}>
         <FaHome size={24} />
       </button>

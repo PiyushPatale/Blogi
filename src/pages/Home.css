@@ -1,8 +1,14 @@
+html, body {
+  height: auto;
+  margin: 0;
+  overflow-y: auto;
+}
+
 .home-container {
   position: relative;
   width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  overflow: visible !important;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,7 +16,15 @@
   text-align: center;
   color: white;
   padding: 60px 20px;
+  z-index: 1;
 }
+
+.scroll-container {
+  height: calc(100vh); 
+  overflow-y: auto;
+  padding: 10px;
+}
+
 
 .video-bg {
   position: absolute;
